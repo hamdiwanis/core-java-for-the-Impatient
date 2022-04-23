@@ -1,7 +1,10 @@
 package ch2;
 
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
 public class Ex16 {
-    public static class Queue {
+    public static class Queue implements Iterable<String> {
         private Node listHead;
         private Node listTail;
 
@@ -42,6 +45,30 @@ public class Ex16 {
             }
 
             return stringValue.toString();
+        }
+
+        public Iterator<String> iterator() {
+            return new QueueIterator();
+        }
+
+        public class QueueIterator implements Iterator<String> {
+            private Node currentNode = listHead;
+
+            @Override
+            public String next() {
+                if (hasNext()) {
+                    var value = currentNode.value;
+                    currentNode = currentNode.next;
+                    return value;
+                } else {
+                    throw new NoSuchElementException();
+                }
+            }
+
+            @Override
+            public boolean hasNext() {
+                return currentNode != null;
+            }
         }
 
         public static class Node {
