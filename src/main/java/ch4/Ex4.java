@@ -30,6 +30,11 @@ public class Ex4 {
         public Point getCenter() {
             return mainPoint;
         }
+
+        @Override
+        protected Circle clone() {
+            return new Circle(mainPoint, radius);
+        }
     }
 
     public static class Rectangle extends Shape {
@@ -44,6 +49,11 @@ public class Ex4 {
         @Override
         public Point getCenter() {
             return new Point(mainPoint.x + (width / 2), mainPoint.x + (height / 2));
+        }
+
+        @Override
+        protected Rectangle clone() {
+            return new Rectangle(mainPoint, width, height);
         }
     }
 
@@ -63,9 +73,14 @@ public class Ex4 {
         @Override
         public void moveBy(double dx, double dy) {
             super.moveBy(dx, dy);
-            
+
             to.setX(to.getX() + dx);
             to.setY(to.getY() + dy);
+        }
+
+        @Override
+        protected Line clone() {
+            return new Line(mainPoint, to);
         }
     }
 }
