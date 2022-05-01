@@ -1,9 +1,10 @@
 package ch1;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Ex8 {
-    public static ArrayList<String> printNonEmptySubStrings(String input) {
+    public static List<String> printNonEmptySubStrings(String input) {
         var subStrings = new ArrayList<String>();
 
         for (int i = 0; i < input.length(); i++) {

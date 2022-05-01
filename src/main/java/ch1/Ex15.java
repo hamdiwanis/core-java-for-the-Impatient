@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Ex15 {
-    static public ArrayList<ArrayList<Integer>> generatePascal(int n) {
+    static public List<? extends List<Integer>> generatePascal(int n) {
         var pascal = new ArrayList<ArrayList<Integer>>();
 
         for (int i = 0; i <= n; i++) {

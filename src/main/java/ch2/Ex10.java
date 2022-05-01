@@ -1,6 +1,6 @@
 package ch2;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Ex10 {
@@ -14,7 +14,7 @@ public class Ex10 {
             return list[index];
         }
 
-        public static int randomElement(ArrayList<Integer> list) {
+        public static int randomElement(List<Integer> list) {
             if (list.isEmpty()) return 0;
 
             int index = randomGenerator.nextInt(list.size());
