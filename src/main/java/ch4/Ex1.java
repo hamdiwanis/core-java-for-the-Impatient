@@ -4,8 +4,7 @@ import java.util.Objects;
 
 public class Ex1 {
     public static class Point {
-        private double x;
-        private double y;
+        protected double x, y;
 
         public Point(double x, double y) {
             this.x = x;
@@ -72,8 +71,8 @@ public class Ex1 {
         public String toString() {
             return "LabeledPoint{" +
                     "label='" + label + '\'' +
-                    ", x=" + getX() +
-                    ", y=" + getY() +
+                    ", x=" + x +
+                    ", y=" + y +
                     '}';
         }
     }
