@@ -1,7 +1,7 @@
 package ch3;
 
 public class Ex4 {
-    public static abstract class IntSequence {
+    interface IntSequence {
         static IntSequence of(int... list) {
             return new IntSequence() {
                 private int index = 0;
@@ -18,8 +18,14 @@ public class Ex4 {
             };
         }
 
-        abstract boolean hasNext();
+        static IntSequence constant(int value) {
+            return () -> value;
+        }
 
-        abstract int next();
+        default boolean hasNext() {
+            return true;
+        }
+
+        int next();
     }
 }
