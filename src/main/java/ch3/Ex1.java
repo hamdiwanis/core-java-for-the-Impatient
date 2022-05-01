@@ -10,6 +10,21 @@ public class Ex1 {
         return sum / objects.length;
     }
 
+    public static Measurable largest(Measurable[] objects) {
+        if (objects.length < 1) {
+            return null;
+        }
+
+        Measurable max = objects[0];
+        for (Measurable object : objects) {
+            if (object.getMeasure() > max.getMeasure()) {
+                max = object;
+            }
+        }
+
+        return max;
+    }
+
 
     public interface Measurable {
         double getMeasure();
@@ -22,6 +37,10 @@ public class Ex1 {
         public Employee(String name, double salary) {
             this.name = name;
             this.salary = salary;
+        }
+
+        public String getName() {
+            return name;
         }
 
         @Override
