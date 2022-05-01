@@ -19,7 +19,7 @@ class Ex3Test {
 
     @ParameterizedTest
     @MethodSource("testCases")
-    void return_expected_results(int number1, int number2, int number3, int expectedResult) {
+    void returnExpectedResults(int number1, int number2, int number3, int expectedResult) {
         int result = Ex3.findLargest(number1, number2, number3);
 
         assertEquals(expectedResult, result);

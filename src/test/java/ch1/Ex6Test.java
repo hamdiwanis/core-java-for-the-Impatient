@@ -22,7 +22,7 @@ class Ex6Test {
 
     @ParameterizedTest
     @MethodSource("testCases")
-    void return_expected_results(int n, BigInteger expectedResult) {
+    void returnExpectedResults(int n, BigInteger expectedResult) {
         BigInteger result = Ex6.factorial(n);
 
         assertEquals(expectedResult, result);

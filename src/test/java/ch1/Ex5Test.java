@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class Ex5Test {
     @Test
-    void fixed_int_value_when_cast_double_is_larger_than_int_capacity() {
+    void fixedIntValueWhenCastDoubleIsLargerThanIntCapacity() {
         double overflow = 7.0;
         int result = Ex5.doubleToInt(Integer.MAX_VALUE + overflow);
 
@@ -14,7 +14,7 @@ class Ex5Test {
     }
 
     @Test
-    void overflow_when_value_is_larger_than_byte_capacity() {
+    void overflowWhenValueIsLargerThanByteCapacity() {
         int overflow = 2;
         int result = Ex5.intToByte(Byte.MAX_VALUE + overflow);
 

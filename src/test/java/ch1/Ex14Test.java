@@ -35,7 +35,7 @@ class Ex14Test {
 
     @ParameterizedTest
     @MethodSource("testCases")
-    void return_expected_results(int[][] input, boolean expectedResult) {
+    void returnExpectedResults(int[][] input, boolean expectedResult) {
         boolean result = Ex14.isMagicSquare(input);
 
         assertEquals(expectedResult, result);

@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class Ex9Test {
     @Test
-    void return_expected_results() {
+    void returnExpectedResults() {
         String string1 = new String("H7");
         String string2 = new String("H7");
 

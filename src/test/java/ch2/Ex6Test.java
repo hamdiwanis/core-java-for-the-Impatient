@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class Ex6Test {
     @Test
-    void return_expected_results() {
+    void returnExpectedResults() {
         var point = new Ex6.Point(3, 4);
 
         point.translate(1, 3);

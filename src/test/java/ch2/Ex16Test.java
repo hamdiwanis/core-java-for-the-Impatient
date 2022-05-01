@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class Ex16Test {
     @Test
-    void work_as_expected() {
+    void workAsExpected() {
         var queue = new Ex16.Queue();
 
         queue.add("1");

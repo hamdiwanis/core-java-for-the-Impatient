@@ -56,7 +56,7 @@ class Ex1Test {
 
     @ParameterizedTest
     @MethodSource("testCases")
-    void return_expected_results(DayOfWeek startDay, LocalDate day, String expectedResult) {
+    void returnExpectedResults(DayOfWeek startDay, LocalDate day, String expectedResult) {
         String result = Ex1.calenderPage(startDay, day);
 
         assertEquals(expectedResult, result);

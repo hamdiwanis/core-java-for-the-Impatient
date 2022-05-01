@@ -21,7 +21,7 @@ class Ex2Test {
 
     @ParameterizedTest
     @MethodSource("testCases")
-    void return_expected_results(int testCase, int expectedResult) {
+    void returnExpectedResults(int testCase, int expectedResult) {
         int result = Ex2.normalizeDegree(testCase);
 
         assertEquals(expectedResult, result);

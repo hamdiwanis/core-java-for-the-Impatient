@@ -1,6 +1,7 @@
 package ch1;
 
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -11,7 +12,7 @@ import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class Ex1Test {
     private static PrintStream originalOut;
@@ -51,7 +52,7 @@ class Ex1Test {
 
     @ParameterizedTest
     @MethodSource("testCases")
-    void return_expected_result(String testcaseInput, String expectedResult) {
+    void returnExpectedResult(String testcaseInput, String expectedResult) {
         ByteArrayOutputStream mockedOut = mockInAndOut(testcaseInput, expectedResult);
 
         Ex1.main(null);

@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class Ex4Test {
     @Test
-    void return_expected_results() {
+    void returnExpectedResults() {
         var int1 = new Ex4.IntHolder(1);
         var int2 = new Ex4.IntHolder(2);
 

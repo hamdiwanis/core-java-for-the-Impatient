@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class Ex9Test {
     @Test
-    void work_as_expected() {
+    void workAsExpected() {
         var perfectCar = new Ex9.Car(1);
 
         perfectCar.reFill(7);

@@ -7,14 +7,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class Ex13Test {
     @Test
-    void has_right_length() {
+    void hasRightLength() {
         Integer[] result = Ex13.generateLotteryCombination();
 
         assertEquals(6, result.length);
     }
 
     @Test
-    void array_is_sorted() {
+    void arrayIsSorted() {
         Integer[] result = Ex13.generateLotteryCombination();
 
         for (int i = 0; i < result.length - 1; i++) {
@@ -23,7 +23,7 @@ class Ex13Test {
     }
 
     @Test
-    void array_is_in_range() {
+    void arrayIsInRange() {
         Integer[] result = Ex13.generateLotteryCombination();
 
         for (int i = 0; i < result.length - 1; i++) {
