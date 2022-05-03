@@ -10,7 +10,7 @@ public class Ex7 {
         var wordCount = new TreeMap<String, Integer>();
 
         for (var item : words) {
-            wordCount.merge(item, 1, (oldValue, newValue) -> oldValue + 1);
+            wordCount.merge(item, 1, Integer::sum);
         }
 
         return wordCount;
