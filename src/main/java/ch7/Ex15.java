@@ -1,5 +1,7 @@
 package ch7;
 
+import ch7.Ex13.Cache;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -8,9 +10,22 @@ import java.util.function.IntFunction;
 public class Ex15 {
     public static List<Integer> listOf(IntFunction<Integer> generateFn) {
         return new ArrayList<Integer>() {
+            final Cache<Integer, Integer> cache = new Cache<>(10, 100);
+
+            public Integer getFromCache(int index) {
+                var value = cache.get(index);
+
+                if (value == null) {
+                    value = generateFn.apply(index);
+                    cache.put(index, value);
+                }
+
+                return value;
+            }
+
             @Override
             public Integer get(int index) {
-                return generateFn.apply(index);
+                return getFromCache(index);
             }
 
             @Override
@@ -40,7 +55,7 @@ public class Ex15 {
 
                     @Override
                     public Integer next() {
-                        return generateFn.apply(index++);
+                        return getFromCache(index++);
                     }
                 };
             }
