@@ -1,24 +1,28 @@
 package ch7;
 
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.*;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+import java.util.regex.MatchResult;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class Ex8 {
-    public static Map<String, Set<Integer>> findWordsInfile(String filePath) throws FileNotFoundException {
+    public static Map<String, Set<Integer>> findWordsInfile(String filePath) throws FileNotFoundException, IOException {
         var wordsMap = new HashMap<String, Set<Integer>>();
 
-        try (var in = new Scanner(new File(filePath))) {
+        var wordsRegex = Pattern.compile("[\\w\\d]*");
+        try (var reader = Files.newBufferedReader(Path.of(filePath))) {
+            var line = reader.readLine();
             var lineIndex = 1;
-            while (in.hasNextLine()) {
-                var wordsRegex = Pattern.compile("[\\w\\d]*");
-                var line = in.nextLine();
+            while (line != null) {
                 var matcher = wordsRegex.matcher(line);
-                var words = matcher.results()
-                        .map(result -> line.substring(result.start(), result.end()))
-                        .collect(Collectors.toList());
+                var words = matcher.results().map(MatchResult::group).collect(Collectors.toList());
 
                 for (var word : words) {
                     if (word.length() == 0) {
@@ -30,6 +34,7 @@ public class Ex8 {
                     wordsMap.put(word, lines);
                 }
 
+                line = reader.readLine();
                 lineIndex++;
             }
         }
